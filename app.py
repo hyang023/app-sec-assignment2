@@ -11,7 +11,7 @@ def register():
 
 @app.route('/login')
 def login():
-    return 'login page'
+    return 'login page; id=success'
 
 @app.route('/spell_check')
 def spell_check():
