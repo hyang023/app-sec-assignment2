@@ -6,13 +6,13 @@ def hello_world():
     return 'Hello, World!'
 
 @app.route('/register')
-def hello_world():
+def register():
     return 'registration page'
 
 @app.route('/login')
-def hello_world():
+def login():
     return 'login page'
 
 @app.route('/spell_check')
-def hello_world():
+def spell_check():
     return 'spell_check page'
