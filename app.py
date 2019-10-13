@@ -7,11 +7,11 @@ def hello_world():
 
 @app.route('/register')
 def register():
-    return 'registration page'
+    return 'registration page; id=success'
 
 @app.route('/login')
 def login():
-    return 'login page; id=success'
+    return 'login page'
 
 @app.route('/spell_check')
 def spell_check():
