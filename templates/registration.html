@@ -4,25 +4,22 @@
      <h1> Registration</h1>
   </head>  
 <body>
-<form>	
-     <table>		
-           <tr>			
-               <td>				
-                   Username: 			
-               </td>			
-                <td>				
-                   <input type=”text” name=””>			
-                </td>		
-           </tr>
-            <tr>
-                 <td>				
-                   Password:			
-                 </td>			
-                 <td>				
-                  <input type=”Password” name=””>			
-                 </td>		
-           </tr>	
-     </table>
-</form> 
+<form action="action_page.php" method="post">
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+  </div>
+</form>
+<form action="action_page.php" method="post">
+  <div class="container">
+    <label for="pword"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pword" id="pword" required>
+</form>
+<form action="action_page.php" method="post">
+  <div class="container">
+    <label for="2fa"><b>Two-factor Authentication Device</b></label>
+    <input type="text" placeholder="Enter Username" name="2fa" id="2fa" required>
+  </div>
+</form>
 </body>
 </html>
