@@ -9,7 +9,7 @@ def hello_world():
 def register():
     return render_template('registration.html')
 
-@app.route('/register_success')
+@app.route('/register_success', methods=['POST'])
 def register_success():
 	return render_template('register_success.html')
 
@@ -17,7 +17,7 @@ def register_success():
 def login():
     return render_template('login.html')
 
-@app.route('/login_success')
+@app.route('/login_success', methods=['POST'])
 def login_success():
 	return render_template('login_success.html')
 
