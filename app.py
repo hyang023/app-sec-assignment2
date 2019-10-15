@@ -23,7 +23,7 @@ def login():
     if request.method == 'POST':
         uname = request.form.get('uname')
         pword = request.form.get('pword')
-        2fa = request.form.get('2fa')
+        twofa = request.form.get('2fa')
  
         if uname  and pword :
             message = "Success"
