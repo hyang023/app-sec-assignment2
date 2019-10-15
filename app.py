@@ -11,7 +11,11 @@ def register():
 
 @app.route('/login')
 def login():
-    return 'login page'
+    return render_template('login.html')
+
+@app.rout('/login_success')
+def login_success():
+	return render_template('login_success.html')
 
 @app.route('/spell_check')
 def spell_check():
