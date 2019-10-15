@@ -33,6 +33,13 @@ def login():
 def login_success():
     return render_template('login_success.html')
 
-@app.route('/spell_check')
+@app.route('/spell_check', methods=['post', 'get'])
 def spell_check():
-    return 'spell_check page'
+    message = ''
+    if request.method == 'POST':
+        inputtext = request.form.get('inputtext')
+ 
+        if inputtext:
+            message = "Supplied Text: "
+            message2 = "Misspelled words: "
+    return render_template('spellcheck.html', message=message, message2=message2)
