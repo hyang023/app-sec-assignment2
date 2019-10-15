@@ -9,6 +9,10 @@ def hello_world():
 def register():
     return render_template('registration.html')
 
+@app.route('/register_success')
+def register():
+	return render_template('register_success.html')
+
 @app.route('/login')
 def login():
     return render_template('login.html')
