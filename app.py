@@ -13,7 +13,7 @@ def register():
         pword = request.form.get('pword')
         2fa = request.form.get('2fa')
  
-        if username and password:
+        if uname and pword:
         #    message = "Correct username and password"
         #else:
 	    message = "Success"
