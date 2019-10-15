@@ -26,7 +26,7 @@ def login():
         twofa = request.form.get('2fa')
  
         if uname  and pword :
-            message = "Success"
+            message = "Incorrect"
     return render_template('login.html', message=message)
 
 @app.route('/login_success', methods=['POST'])
