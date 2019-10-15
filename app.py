@@ -7,7 +7,17 @@ def hello_world():
 
 @app.route('/register')
 def register():
-    return render_template('registration.html')
+	message = ''
+	if request.method == 'POST':
+        uname = request.form.get('uname')
+        pword = request.form.get('pword')
+        2fa = request.form.get('2fa')
+ 
+        #if username == 'root' and password == 'pass':
+        #    message = "Correct username and password"
+        #else:
+            message = "Success"
+    return render_template('registration.html', message=message)
 
 @app.route('/register_success', methods=['POST'])
 def register_success():
