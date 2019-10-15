@@ -13,7 +13,7 @@ def register():
 def login():
     return render_template('login.html')
 
-@app.rout('/login_success')
+@app.route('/login_success')
 def login_success():
 	return render_template('login_success.html')
 
