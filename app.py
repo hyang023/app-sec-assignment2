@@ -5,7 +5,7 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/register')
+@app.route('/register', methods=['post', 'get'])
 def register():
     message = ''
     if request.method == 'POST':
