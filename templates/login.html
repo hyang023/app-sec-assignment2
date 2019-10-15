@@ -5,7 +5,7 @@
   </head>  
 <body>
   {% if message %}
-    <p id=success>{{ message }}</p>
+    <p id=result>{{ message }}</p>
   {% endif %}
 
 <form action="{{ url_for('login_success') }}" method="post">
