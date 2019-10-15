@@ -36,6 +36,7 @@ def login_success():
 @app.route('/spell_check', methods=['post', 'get'])
 def spell_check():
     message = ''
+    message2 = ''
     if request.method == 'POST':
         inputtext = request.form.get('inputtext')
  
