@@ -14,7 +14,7 @@ def register():
         twofa = request.form.get('2fa')
  
         if uname and pword:
-        message = "Success"
+            message = "Success"
     return render_template('registration.html', message=message)
 
 @app.route('/register_success', methods=['POST'])
