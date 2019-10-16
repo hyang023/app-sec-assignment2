@@ -23,7 +23,7 @@ def register():
         	else:
         	    unamelist.append(uname)
         	    pwordlist.append(pword)
-        	    if twofa.isdigist():
+        	    if twofa.isdigit():
         	        twofalist.append(twofa)
         	    else:
         	        twofalist.append('no')
