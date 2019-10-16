@@ -33,7 +33,7 @@ def register():
 
 @app.route('/login',  methods=['post', 'get'])
 def login():
-    message = ''
+    message = "Success"
     if request.method == 'POST':
         uname = request.form.get('uname')
         pword = request.form.get('pword')
