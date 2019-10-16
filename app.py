@@ -43,8 +43,8 @@ def login():
         	message = "Incorrect"
         	if uname in unamelist:
         	    index = unamelist.index(uname)
-        	if pname in pnamelist:
-        		index2 = pnamelist.index(pword)
+        	if pword in pwordlist:
+        		index2 = pwordlist.index(pword)
         	#if index1 == index2:
         	#        message = "Success"
         	message = "index :"+str(index)+" and index2: "+str(index2)
