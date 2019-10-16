@@ -45,9 +45,8 @@ def login():
         	    index = unamelist.index(uname)
         	if pword in pwordlist:
         		index2 = pwordlist.index(pword)
-        	#if index1 == index2:
-        	#        message = "Success"
-        	message = "index :"+str(index)+" and index2: "+str(index2)
+        	if index1 == index2:
+        	        message = "Success"
         	        #message = "Incorrect uname is "+unamelist[i]+" and pword is "+pwordlist[i]+" but you entered user: "+uname+" and pass: "+pword
 
     return render_template('login.html', message=message)
