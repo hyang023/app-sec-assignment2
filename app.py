@@ -40,11 +40,12 @@ def login():
         twofa = request.form.get('2fa')
  
         if uname  and pword :
-        	for i in range(len(unamelist)):
-        	    if str(uname) == str(unamelist[i]) and str(pword) == str(pwordlist[i]):
-        	        message = "Success"
-                else:
-        	        message = "Incorrect uname is "+unamelist[i]+" and pword is "+pwordlist[i]+" but you entered user: "+uname+" and pass: "+pword
+        	message = "Incorrect"
+        	if uname in unamelist:
+        	    index = username.index(log_user)
+        	        if log_pass == password[index]:
+                        message = "Success"
+        	        #message = "Incorrect uname is "+unamelist[i]+" and pword is "+pwordlist[i]+" but you entered user: "+uname+" and pass: "+pword
 
     return render_template('login.html', message=message)
 
