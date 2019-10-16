@@ -44,7 +44,7 @@ def login():
         	    if str(uname) == str(unamelist[i]) and str(pword) == str(pwordlist[i]):
         	        message = "Success"
                 else:
-        	        message = "Incorrect uname is "+unamelist[i]+" and pword is "+pwordlist[i]
+        	        message = "Incorrect uname is "+unamelist[i]+" and pword is "+pwordlist[i]+" but you entered user: "+uname+" and pass: "+pword
 
     return render_template('login.html', message=message)
 
