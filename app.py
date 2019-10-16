@@ -33,7 +33,7 @@ def register():
 
 @app.route('/login',  methods=['post', 'get'])
 def login():
-    message = "Success"
+    message = ''
     if request.method == 'POST':
         uname = request.form.get('uname')
         pword = request.form.get('pword')
@@ -42,12 +42,9 @@ def login():
         if uname  and pword :
         	for i in range(len(usernameslist)):
         	    if uname == unamelist[i] and pword == pwordlist[i]:
-        	    	if twofa == twofalist[i] or twofalist[i] == "no":
-        	    		message = "Success"
-        	    	else:
-        	    	    message = "Two-factor authentication failure"
-        	    else:
-        	        message = "Incorrect"
+                    message = "Success"
+                else
+                    message = "Incorrect"
 
     return render_template('login.html', message=message)
 
