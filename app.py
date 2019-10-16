@@ -41,7 +41,7 @@ def login():
  
         if uname  and pword :
         	for i in range(len(unamelist)):
-        	    if uname == unamelist[i] and pword == pwordlist[i]:
+        	    if str(uname) == str(unamelist[i]) and str(pword) == str(pwordlist[i]):
         	        message = "Success"
                 else:
         	        message = "Incorrect uname is "+unamelist[i]+" and pword is "+pwordlist[i]
