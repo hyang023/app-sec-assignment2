@@ -40,7 +40,7 @@ def login():
         twofa = request.form.get('2fa')
  
         if uname  and pword :
-        	message = "Incorrect"
+        	message = "Incorrect password "+uname
         	if uname in unamelist:
         	    index = unamelist.index(uname)
         	    if pword in pwordlist:
