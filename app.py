@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
+unamelist = [] 
+pwordlist = [] 
+twofalist = [] 
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -14,7 +18,17 @@ def register():
         twofa = request.form.get('2fa')
  
         if uname  and pword :
-            message = "Success"
+        	if uname in unamelist:
+        	    message="Failure: username already exists"
+        	else:
+        	    unamelist.append(uname)
+        	    pwordlist.append(pword)
+        	    if twofa.isdigist():
+        	        twofalist.append(twofa)
+        	    else:
+        	        twofalist.append('no')
+                message = "Success"
+
     return render_template('registration.html', message=message)
 
 @app.route('/login',  methods=['post', 'get'])
@@ -26,7 +40,15 @@ def login():
         twofa = request.form.get('2fa')
  
         if uname  and pword :
-            message = "Success"
+        	for i in range(len(usernameslist)):
+        	    if uname == unamelist[i] and pword == pwordlist[i]:
+        	    	if twofa == twofalist[i] or || twofalist[i] == "no":
+        	    		message = "Success"
+        	    	else:
+        	    	    message = "Two-factor authentication failure"
+        	    else:
+        	        message = "Incorrect"
+
     return render_template('login.html', message=message)
 
 @app.route('/login_success', methods=['POST'])
