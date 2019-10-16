@@ -41,7 +41,7 @@ def login():
  
         if uname  and pword :
         	for i in range(len(usernameslist)):
-                message = unamelist[i]
+        	    message = unamelist[i]
         	    #if uname == unamelist[i] and pword == pwordlist[i]:
         	    #    message = "Success"
                 #else:
