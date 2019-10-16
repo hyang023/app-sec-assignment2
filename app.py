@@ -40,12 +40,11 @@ def login():
         twofa = request.form.get('2fa')
  
         if uname  and pword :
-        	for i in range(len(usernameslist)):
-        	    message = unamelist[i]
-        	    #if uname == unamelist[i] and pword == pwordlist[i]:
-        	    #    message = "Success"
-                #else:
-        	    #    message = "Incorrect"
+        	for i in range(len(unamelist)):
+        	    if uname == unamelist[i] and pword == pwordlist[i]:
+        	        message = "Success"
+                else:
+        	        message = "Incorrect"
 
     return render_template('login.html', message=message)
 
