@@ -27,7 +27,7 @@ def register():
         	        twofalist.append(twofa)
         	    else:
         	        twofalist.append('no')
-                message = "Success"
+        	    message = "Success"
 
     return render_template('registration.html', message=message)
 
