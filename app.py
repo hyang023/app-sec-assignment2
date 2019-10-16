@@ -43,7 +43,7 @@ def login():
         	for i in range(len(usernameslist)):
         	    if uname == unamelist[i] and pword == pwordlist[i]:
         	        message = "Success"
-                else
+                else:
         	        message = "Incorrect"
 
     return render_template('login.html', message=message)
