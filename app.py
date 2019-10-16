@@ -42,7 +42,7 @@ def login():
         if uname  and pword :
         	for i in range(len(usernameslist)):
         	    if uname == unamelist[i] and pword == pwordlist[i]:
-        	    	if twofa == twofalist[i] or || twofalist[i] == "no":
+        	    	if twofa == twofalist[i] or twofalist[i] == "no":
         	    		message = "Success"
         	    	else:
         	    	    message = "Two-factor authentication failure"
