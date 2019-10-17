@@ -47,6 +47,8 @@ def login():
         		    index2 = pwordlist.index(pword)
         		    if index == index2:
         		        message = "Success"
+        	    if pwordlist[index] == pword:
+        		    message = "Success2"
 
     return render_template('login.html', message=message)
 
