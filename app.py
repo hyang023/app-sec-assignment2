@@ -49,6 +49,8 @@ def login():
         		        message = "Success"
         	    if pwordlist[index] == pword:
         		    message = "Success"
+        	    if twofalist[index] != twofa:
+        		    message = "Two-factor authentication failure"
 
     return render_template('login.html', message=message)
 
