@@ -1,3 +1,4 @@
+import random
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
@@ -11,6 +12,7 @@ def hello_world():
 
 @app.route('/register', methods=['post', 'get'])
 def register():
+    value=random.randrange(1,100)
     message = ''
     if request.method == 'POST':
         uname = request.form.get('uname')
@@ -29,10 +31,11 @@ def register():
         	        twofalist.append('no')
         	    message = "Success. Your username is "+uname
 
-    return render_template('registration.html', message=message)
+    return render_template('registration.html', message=message, value=value)
 
 @app.route('/login',  methods=['post', 'get'])
 def login():
+    value=random.randrange(1,100)
     message = ''
     if request.method == 'POST':
         uname = request.form.get('uname')
@@ -52,7 +55,7 @@ def login():
         	    if twofalist[index] != twofa:
         		    message = "Two-factor authentication failure"
 
-    return render_template('login.html', message=message)
+    return render_template('login.html', message=message, value=value)
 
 @app.route('/login_success', methods=['POST'])
 def login_success():
@@ -60,6 +63,7 @@ def login_success():
 
 @app.route('/spell_check', methods=['post', 'get'])
 def spell_check():
+    value=random.randrange(1,100)
     message = ''
     message2 = ''
     if request.method == 'POST':
@@ -68,4 +72,4 @@ def spell_check():
         if inputtext:
             message = "Supplied Text: "
             message2 = "Misspelled words: "
-    return render_template('spellcheck.html', message=message, message2=message2)
+    return render_template('spellcheck.html', message=message, message2=message2, value=value)
