@@ -11,5 +11,6 @@ only:
 
 install:
   - ./.travis/install
+  - pip install tox-travis
 script:
-  - ./.travis/run tox
+  - tox
