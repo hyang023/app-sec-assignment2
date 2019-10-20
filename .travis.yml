@@ -10,7 +10,6 @@ only:
     
 
 install:
-  - ./.travis/install
   - pip install tox-travis
 script:
   - tox
