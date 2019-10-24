@@ -12,6 +12,8 @@ before install:
   - export FLASK_APP=app.py
 
 install:
+  - pip install flask
+  - pip install tox
   - pip install tox-travis
 script:
   - python -m flask run && tox
