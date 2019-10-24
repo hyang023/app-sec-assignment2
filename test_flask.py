@@ -8,7 +8,7 @@ def apptest():
     apptest.debug = True
     return apptest.test_client()
 
-def test_hello_world(app):
+def test_hello_world(apptest):
     res = apptest.get("/")
     # print(dir(res), res.status_code)
     assert res.status_code == 200
