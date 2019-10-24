@@ -8,8 +8,10 @@ branchs:
 only:
     - master
     
+before install:
+  - export FLASK_APP=app.py
 
 install:
   - pip install tox-travis
 script:
-  - tox
+  - python -m flask run && tox
