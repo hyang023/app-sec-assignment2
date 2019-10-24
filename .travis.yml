@@ -16,5 +16,8 @@ install:
   - pip install tox
   - pip install tox-travis
 script:
-  - travis_wait 60 python -m flask run
+  - |
+    travis_wait 60 python -m flask &
+    SERVER_PID=$!
+  - echo $SERVER_PID
   - tox
