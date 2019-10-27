@@ -13,3 +13,9 @@ def test_hello_world(apptest):
     # print(dir(res), res.status_code)
     assert res.status_code == 200
     assert b"Hello, World!" in res.data
+
+def login(client, username, password):
+    return client.post('/login', data=dict(
+        username=username,
+        password=password
+    ), follow_redirects=True)
