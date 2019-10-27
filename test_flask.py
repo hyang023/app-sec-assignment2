@@ -19,3 +19,9 @@ def login(client, username, password):
         username=username,
         password=password
     ), follow_redirects=True)
+
+def test_hello_world(apptest):
+    res = apptest.get("/login")
+    # print(dir(res), res.status_code)
+    assert res.status_code == 200
+    assert b"Login" in res.data
