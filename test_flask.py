@@ -25,6 +25,14 @@ def test_registration(apptest):
     # print(dir(res), res.status_code)
     assert res.status_code == 200
     assert b"Registration" in res.data
+    
+def test_valid_login_logout(test_client, init_database):
+    response = apptest.post('/login',
+                                data=dict(uname='user1', pword='FlaskIsAwesome'),
+                                follow_redirects=True)
+    assert response.status_code == 200
+    assert b"Success. Your username is user1" in response.data
+ 
 
 def test_login(apptest):
     res = apptest.get("/login")
