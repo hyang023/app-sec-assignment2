@@ -35,7 +35,7 @@ def test_registration_no2fa(apptest):
 
 def test_registration_2fa(apptest):
     response = apptest.post('/register',
-                                data=dict(uname='user2', pword='FlaskIsAwesome2', 2fa='1234567890'),
+                                data=dict(uname='user2', pword='FlaskIsAwesome2', '2fa'='1234567890'),
                                 follow_redirects=True)
     assert response.status_code == 200
     assert b"Success. Your username is user2" in response.data
