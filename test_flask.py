@@ -26,8 +26,8 @@ def test_registration(apptest):
     assert res.status_code == 200
     assert b"Registration" in res.data
     
-def test_valid_login_logout(apptest):
-    response = apptest.post('/login',
+def test_valid_registration(apptest):
+    response = apptest.post('/register',
                                 data=dict(uname='user1', pword='FlaskIsAwesome'),
                                 follow_redirects=True)
     assert response.status_code == 200
