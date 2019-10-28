@@ -40,18 +40,18 @@ def test_registration_2fa(apptest):
     assert response.status_code == 200
     assert b"Success. Your username is user2" in response.data
     
-def test_registration_userexists(apptest):
-    response = apptest.post('/register',
-                                data=dict(uname='user1', pword='FlaskIsAwesome'),
-                                follow_redirects=True)
-    assert response.status_code == 200
-    assert b"Failure: username already exists" in response.data
- 
 def test_login(apptest):
     res = apptest.get("/login")
     # print(dir(res), res.status_code)
     assert res.status_code == 200
     assert b"Login" in res.data
+    
+def test_login_user(apptest):
+    response = apptest.post('/register',
+                                data=dict(uname='user1', pword='FlaskIsAwesome'),
+                                follow_redirects=True)
+    assert response.status_code == 200
+    assert b"Success" in response.data
     
 def test_spellcheck(apptest):
     res = apptest.get("/spell_check")
