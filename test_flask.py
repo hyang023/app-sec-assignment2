@@ -33,9 +33,14 @@ def test_valid_registration(apptest):
     assert response.status_code == 200
     assert b"Success. Your username is user1" in response.data
  
-
 def test_login(apptest):
     res = apptest.get("/login")
     # print(dir(res), res.status_code)
     assert res.status_code == 200
     assert b"Login" in res.data
+    
+def test_spellcheck(apptest):
+    res = apptest.get("/spell_check")
+    # print(dir(res), res.status_code)
+    assert res.status_code == 200
+    assert b"Spell Check Tool" in res.data
