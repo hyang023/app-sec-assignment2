@@ -53,6 +53,13 @@ def test_login_user(apptest):
     assert response.status_code == 200
     assert b"Success" in response.data
     
+def test_login_user2fa(apptest):
+    response = apptest.post('/register',
+                                data=dict(uname='user2', pword='FlaskIsAwesome2', twofa='1234567890'),
+                                follow_redirects=True)
+    assert response.status_code == 200
+    assert b"Success" in response.data
+    
 def test_spellcheck(apptest):
     res = apptest.get("/spell_check")
     # print(dir(res), res.status_code)
