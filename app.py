@@ -28,8 +28,9 @@ def create_app(config=None):
             	else:
             	    unamelist.append(uname)
             	    pwordlist.append(pword)
-            	    if twofa.isdigit():
-            	        twofalist.append(twofa)
+            	    if twofa:
+                        if twofa.isdigit():
+            	            twofalist.append(twofa)
             	    else:
             	        twofalist.append('no')
             	    message = "Success. Your username is "+uname
